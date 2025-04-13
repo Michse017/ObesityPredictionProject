@@ -8,6 +8,7 @@ The model is trained but **not used to make individual predictions** at this sta
 
 ## 📁 Project Structure
 
+```
 ObesityPredictionProject/
 │
 ├── data/
@@ -19,7 +20,7 @@ ObesityPredictionProject/
 │
 ├── main.py                        # Main script that runs the entire process
 └── README.md                      # Project documentation (this file)
-
+```
 ---
 
 ## ⚙️ What does the code do?
