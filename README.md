@@ -1,64 +1,80 @@
-📄 README.txt
+# 🧠 Project: Obesity Prediction with Machine Learning
 
-🧠 Proyecto: Predicción de Obesidad con Machine Learning
+This project aims to train a machine learning model that, based on personal and lifestyle data, can predict a person's level of obesity.
 
-Este proyecto tiene como objetivo entrenar un modelo de aprendizaje automático que, a partir de datos personales y de estilo de vida, pueda predecir el nivel de obesidad de una persona.
-
-El modelo se entrena pero **no se utiliza para hacer predicciones individuales** en esta fase. El enfoque está en el **proceso de entrenamiento y evaluación** del modelo.
+The model is trained but **not used to make individual predictions** at this stage. The focus is on the **training and evaluation process** of the model.
 
 ---
 
-📁 Estructura del proyecto
+## 📁 Project Structure
 
 ObesityPredictionProject/
 │
 ├── data/
-│   └── ObesityDataSet.csv         # Dataset original con 2111 registros
+│   └── ObesityDataSet.csv         # Original dataset with 2111 records
 │
 ├── src/
-│   ├── data_preprocessing.py      # Carga y preprocesamiento de los datos
-│   └── model.py                   # Entrenamiento y evaluación del modelo
+│   ├── data_preprocessing.py      # Data loading and preprocessing
+│   └── model.py                   # Model training and evaluation
 │
-├── main.py                        # Script principal que ejecuta todo
-└── README.txt                     # Documentación del proyecto
+├── main.py                        # Main script that runs the entire process
+└── README.md                      # Project documentation (this file)
 
 ---
 
-⚙️ ¿Qué hace el código?
+## ⚙️ What does the code do?
 
-1. **Carga de datos:** Se cargan 2111 registros desde un archivo CSV.
-2. **Preprocesamiento:**
-   - Se convierten las variables categóricas en variables numéricas.
-   - Se imputan valores faltantes con la media.
-   - Si aún quedan NaN, se reemplazan con ceros.
-3. **División de datos:**
-   - 70% para entrenamiento (1477 registros)
-   - 25% para prueba/test (528 registros)
-   - 5% para evaluación final (106 registros)
-4. **Entrenamiento:** Se entrena un modelo de regresión lineal con los datos de entrenamiento.
-5. **Evaluación del modelo:**
-   - Se evalúa el modelo en los datos de prueba y de evaluación final.
-   - Se reporta el **Error Cuadrático Medio (MSE)** como métrica.
-
----
-
-📊 Resultados de ejemplo
-
-Total de filas en el dataset original: 2111  
-Aún existen valores NaN después de imputar con la media. Se completan con 0.  
-Total de filas después del preprocesamiento: 2111  
-Número de datos para entrenamiento: 1477  
-Número de datos para prueba (test): 528  
-Número de datos para evaluación final: 106  
-Modelo entrenado exitosamente.  
-Evaluación en conjunto de prueba:  
-Error Cuadrático Medio (MSE): 0.2023  
-Evaluación en conjunto de evaluación final:  
-Error Cuadrático Medio (MSE): 0.1976  
+1. **Data loading:** Loads 2111 records from a CSV file.
+2. **Preprocessing:**
+   - Converts categorical variables into numerical format.
+   - Imputes missing values using the mean.
+   - Any remaining NaNs are filled with zeros.
+3. **Data splitting:**
+   - 70% for training (1477 records)
+   - 25% for testing (528 records)
+   - 5% for final evaluation (106 records)
+4. **Model training:** Trains a linear regression model using the training set.
+5. **Model evaluation:**
+   - Evaluates the model on the test and final evaluation sets.
+   - Reports the **Mean Squared Error (MSE)** as the evaluation metric.
 
 ---
 
-✅ ¿Cómo saber que el modelo se está entrenando?
+## 📊 Sample Results
 
-- Si aparece el mensaje `Modelo entrenado exitosamente`, significa que el modelo fue alimentado con los datos de entrenamiento y completó el proceso sin errores.
-- Los valores del MSE indican que el modelo fue capaz de ajustar una función a los datos y luego evaluarse con otros subconjuntos.
+Original dataset row count: 2111  
+Some NaN values remained after imputing with the mean. They were filled with 0.  
+Row count after preprocessing: 2111  
+Training set size: 1477  
+Test set size: 528  
+Final evaluation set size: 106  
+Model trained successfully.  
+
+Test set evaluation:  
+Model evaluation:  
+Mean Squared Error (MSE): 0.2023  
+
+Final evaluation set:  
+Model evaluation:  
+Mean Squared Error (MSE): 0.1976  
+
+---
+
+## 🛠️ Libraries Used
+
+- pandas  
+- numpy  
+- scikit-learn  
+
+---
+
+## ✅ Project Status
+
+✔️ Model training and evaluation working  
+❌ Does not make individual predictions yet  
+
+---
+
+## 📌 Notes
+
+This project was developed as part of a university workshop on Artificial Intelligence. The main objective is to demonstrate the process of training and evaluating a predictive model using real-world data.
