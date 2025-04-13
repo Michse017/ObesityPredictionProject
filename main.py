@@ -30,6 +30,12 @@ def main():
     # Entrenar el modelo
     model = train_model(X_train, y_train)
 
+        # Mostrar la importancia de las variables (coeficientes) del modelo
+    print("\nImportancia de características (coeficientes del modelo):")
+    for feature, coef in zip(X.columns, model.coef_):
+        print(f"{feature}: {coef:.4f}")
+
+
     # Evaluar el modelo en el conjunto de prueba
     print("Evaluación en conjunto de prueba:")
     evaluate_model(model, X_test, y_test)
