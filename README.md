@@ -77,28 +77,43 @@ This provides clear evidence of how lifestyle and behavioral variables affect ob
 
 ### 1. Install Requirements
 
-Make sure Python 3.12+ is installed, then run:
+   Make sure Python 3.12+ is installed, then run:
 
-```
+   ```bash
+   pip install -r requirements.txt
+
+
+### 🛠️ Libraries Used
+
+- pandas  
+- numpy  
+- scikit-learn  
+
+---
+
+### 2. Execute the Main Script
+
 bash
-pip install -r requirements.txt
-
-🛠️ Libraries Used
-pandas
-numpy
-scikit-learn
-2. Execute the Main Script
-Run the following command:
-
+Copy
+Edit
+python main.py
 This will:
 
 Load and preprocess the data.
-Train the regression model.
-Evaluate it on test and evaluation datasets.
-Output feature importance via regression coefficients.
-✅ Project Status
-✔️ Model training and evaluation working
-❌ Does not make individual predictions yet
 
-📌 Notes
-This project was developed as part of a university workshop on Artificial Intelligence. The main objective is to demonstrate the process of training and evaluating a predictive model using real-world data. ```
+Train the regression model.
+
+Evaluate it on test and evaluation datasets.
+
+Output feature importance via regression coefficients.
+
+## ✅ Project Status
+
+✔️ Model training and evaluation working  
+❌ Does not make individual predictions yet  
+
+---
+
+## 📌 Notes
+
+This project was developed as part of a university workshop on Artificial Intelligence. The main objective is to demonstrate the process of training and evaluating a predictive model using real-world data.
