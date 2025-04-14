@@ -1,10 +1,17 @@
-# 🧠 Project: Obesity Prediction with Machine Learning
+# 🧠 Obesity Prediction Project
 
-This project aims to train a machine learning model that, based on personal and lifestyle data, can predict a person's level of obesity.
-
-The model is trained but **not used to make individual predictions** at this stage. The focus is on the **training and evaluation process** of the model.
+This project was developed as part of an Artificial Intelligence university workshop. The goal is to train a machine learning model that predicts an individual's level of obesity based on personal, dietary, and lifestyle features. The project focuses on the full pipeline—from data ingestion and preprocessing to model training, feature impact analysis, and evaluation—using a Linear Regression model.
 
 ---
+
+## 🎯 Objective
+
+- Develop a predictive model using **Linear Regression**.
+- Analyze how factors, such as high-calorie food consumption frequency, physical activity, and calorie monitoring, influence obesity predictions.
+- Demonstrate the complete workflow from data loading to model evaluation.
+
+---
+
 
 ## 📁 Project Structure
 
@@ -23,43 +30,57 @@ ObesityPredictionProject/
 ```
 ---
 
-## ⚙️ What does the code do?
+## ⚙️ Methodology
 
-1. **Data loading:** Loads 2111 records from a CSV file.
-2. **Preprocessing:**
-   - Converts categorical variables into numerical format.
-   - Imputes missing values using the mean.
-   - Any remaining NaNs are filled with zeros.
-3. **Data splitting:**
-   - 70% for training (1477 records)
-   - 25% for testing (528 records)
-   - 5% for final evaluation (106 records)
-4. **Model training:** Trains a linear regression model using the training set.
-5. **Model evaluation:**
-   - Evaluates the model on the test and final evaluation sets.
-   - Reports the **Mean Squared Error (MSE)** as the evaluation metric.
+1. **Data Preprocessing**:
+   - **Loading**: Reads the dataset with 2111 entries.
+   - **Cleaning**:
+     - Numerical columns with missing values are filled using the mean.
+     - Any remaining missing data (e.g., categorical values) is filled with 0.
+   - **Encoding**: Categorical features are converted using One-Hot Encoding.
+
+2. **Data Splitting**:
+   - The dataset is split as follows:
+     - **70% for training** (~1477 records)
+     - **25% for testing** (~528 records)
+     - **5% for final evaluation** (~106 records)
+   - Performed using `train_test_split` with a fixed random state.
+
+3. **Model Training**:
+   - A **Linear Regression** model from `scikit-learn` is trained using the training dataset.
+
+4. **Model Evaluation**:
+   - Evaluated using **Mean Squared Error (MSE)** on both test and evaluation datasets.
+   - Model coefficients are analyzed to interpret feature impact.
+
+---
+
+## 📊 Feature Impact Analysis
+
+Once trained, the model’s coefficients provide insight into how each variable affects obesity prediction:
+
+- **Positive coefficients** → feature increases obesity prediction.
+- **Negative coefficients** → feature reduces obesity prediction.
+
+### Examples:
+- `family_history_with_overweight_yes`: Large positive coefficient — suggests strong influence on obesity.
+- `FAF` (Physical Activity Frequency): Negative coefficient — indicates more activity reduces obesity risk.
+- `FAVC_yes` (Frequent High-Calorie Food Consumption): Positive — more caloric intake increases predicted obesity level.
+- `CH2O` (Water Consumption): Very small coefficient — minimal influence.
+- `MTRANS_Walking`: Moderate positive coefficient — interpreted contextually based on transport habits.
+
+This provides clear evidence of how lifestyle and behavioral variables affect obesity outcomes.
 
 ---
 
-## 📊 Sample Results
+## ▶️ How to Run the Project
 
-Original dataset row count: 2111  
-Some NaN values remained after imputing with the mean. They were filled with 0.  
-Row count after preprocessing: 2111  
-Training set size: 1477  
-Test set size: 528  
-Final evaluation set size: 106  
-Model trained successfully.  
+### 1. Install Requirements
 
-Test set evaluation:  
-Model evaluation:  
-Mean Squared Error (MSE): 0.2023  
+Make sure Python 3.12+ is installed, then run:
 
-Final evaluation set:  
-Model evaluation:  
-Mean Squared Error (MSE): 0.1976  
-
----
+```bash
+pip install -r requirements.txt
 
 ## 🛠️ Libraries Used
 
@@ -68,6 +89,21 @@ Mean Squared Error (MSE): 0.1976
 - scikit-learn  
 
 ---
+
+2. Execute the Main Script
+bash
+Copy
+Edit
+python main.py
+This will:
+
+Load and preprocess the data.
+
+Train the regression model.
+
+Evaluate it on test and evaluation datasets.
+
+Output feature importance via regression coefficients.
 
 ## ✅ Project Status
 
