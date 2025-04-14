@@ -12,6 +12,28 @@ This project was developed as part of an Artificial Intelligence university work
 
 ---
 
+## 📉 Regression Plot: True vs. Predicted Values
+
+This plot compares the true obesity values with the predicted values from the linear regression model on the test dataset.
+
+### 🔍 What does this plot show?
+- **X-axis (True Values)**: The actual obesity values from the dataset.
+- **Y-axis (Predicted Values)**: The values predicted by the linear regression model.
+- **Blue Points**: Each point represents an individual in the test dataset.
+- **Red Dashed Line**: The ideal line for perfect prediction (y = x). If the model were perfect, all points would lie exactly on this line.
+
+![Regression Plot](images/Evaluatioon_set.png)
+![Regression Plot](images/Test_set.png)
+
+
+### ✅ What is interpreted?
+- The points closely follow the red line, which is a good sign: it indicates that the model's predictions are very close to the actual values.
+- There is some vertical dispersion, especially at the extremes, which is normal. This shows that the model makes larger errors at certain levels of obesity, but these errors are not severe.
+- There are no strange patterns such as curves or misaligned groupings, which confirms that linear regression is a reasonable choice for this case.
+
+### 📌 Conclusion
+The linear regression model predicts obesity levels with good accuracy, and this performance is clearly visualized in the plot, where most points align well with the ideal diagonal line.
+
 
 ## 📁 Project Structure
 

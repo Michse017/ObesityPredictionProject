@@ -1,7 +1,30 @@
 # main.py
+import matplotlib.pyplot as plt
 from src.data_preprocessing import load_data, preprocess_data
 from src.model import train_model, evaluate_model
 from sklearn.model_selection import train_test_split
+
+def plot_feature_importance(model, feature_names):
+    coefficients = model.coef_
+    plt.figure(figsize=(10, 8))
+    plt.barh(feature_names, coefficients, color='skyblue')
+    plt.xlabel('Coefficient Value')
+    plt.title('Feature Importance (Linear Regression Coefficients)')
+    plt.axvline(0, color='red', linestyle='--')
+    plt.tight_layout()
+    plt.show()
+
+def plot_regression_results(y_true, y_pred, title="Regression Results"):
+    plt.figure(figsize=(8, 6))
+    plt.scatter(y_true, y_pred, alpha=0.6, color='royalblue')
+    plt.plot([y_true.min(), y_true.max()], [y_true.min(), y_true.max()], 'r--')  # Línea ideal
+    plt.xlabel("True Values")
+    plt.ylabel("Predicted Values")
+    plt.title(title)
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
 
 def main():
     # Ruta del archivo de datos
@@ -43,6 +66,12 @@ def main():
     # Evaluar el modelo en el conjunto de evaluación final
     print("Evaluación en conjunto de evaluación final:")
     evaluate_model(model, X_eval, y_eval)
+
+    y_pred_test = model.predict(X_test)
+    plot_regression_results(y_test, y_pred_test, title="Regression Results on Test Set")
+
+    y_pred_eval = model.predict(X_eval)
+    plot_regression_results(y_eval, y_pred_eval, title="Regression Results on Final Evaluation Set")
 
 if __name__ == '__main__':
     main()
