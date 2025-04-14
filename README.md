@@ -90,7 +90,8 @@ pip install -r requirements.txt
 
 ---
 
-2. Execute the Main Script
+### 2. Execute the Main Script
+
 bash
 Copy
 Edit
